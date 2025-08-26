@@ -1,0 +1,133 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoClean</title>
+    <link
+      rel="shortcut icon"
+      href="{% static 'images/EcoClean__2_-removebg-preview.png' %}"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="{% static 'css_files/admin.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+    <link rel="stylesheet" href="{% static 'js/bootstrap.min.js' %}" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <figure class="img">
+          <img
+            src="{% static 'images/EcoClean__2_-removebg-preview.png' %}"
+            alt=""
+            height="100px"
+            width="100px"
+          />
+        </figure>
+        <div class="logout">
+          <button id="logout-btn">Logout&nbsp;<i class="fas fa-sign-out-alt"></i></button>
+      </div>
+      <div id="logout-popup" style="display:none;">
+        <p style="font-size:18px;font-weight:700">Are you sure you want to logout?</p>
+        <a href="../login"><button id="logout-confirm" class="logout_confirm">Yes</button></a>
+        <a href=""><button id="logout-cancel"  class="logout_cancel">No</button></a>
+      </div>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="container2">
+        <div class="ad">
+          <h3 class="heading">Admin</h3>
+        </div>
+        <div class="container3">
+          <div class="row">
+            <div class="col-md-3 lay">
+              <div class="card">
+                <p class="card-title text-center">Profile</p>
+                <a href="./aprofile.html"
+                  ><button class="btns">Visit</button></a
+                >
+              </div>
+            </div>
+            <div class="col-md-3 lay">
+              <div class="card">
+                <p class="card-title text-center">Manager List</p>
+                <a href="./aml.html"><button class="btns">Visit</button></a>
+              </div>
+            </div>
+            <div class="col-md-3 lay">
+              <div class="card">
+                <p class="card-title text-center">Customer List</p>
+                <a href="./acl.html"><button class="btns">Visit</button></a>
+              </div>
+            </div>
+            <div class="col-md-3 lay">
+              <div class="card">
+                <p class="card-title text-center">Order List</p>
+                <a href="./aol.html"><button class="btns">Visit</button></a>
+              </div>
+            </div>
+            <div class="col-md-3 lay">
+              <div class="card">
+                <p class="card-title text-center">Branch List</p>
+                <a href="./abl.html"><button class="btns">Visit</button></a>
+              </div>
+            </div>
+            <div class="col-md-3 lay">
+              <div class="card">
+                <p class="card-title text-center">Service List</p>
+                <a href="./asl.html"><button class="btns">Visit</button></a>
+              </div>
+            </div>
+            <div class="col-md-3 lay">
+              <div class="card">
+                <p class="card-title text-center">History</p>
+                <a href="./history.html"><button class="btns">Visit</button></a>
+              </div>
+            </div>
+            <div class="col-md-3 lay">
+              <div class="card">
+                <p class="card-title text-center">Feedback List</p>
+                <a href="./feedback.html"
+                  ><button class="btns">Visit</button></a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <hr
+        style="
+          width: 90%;
+          border: 0;
+          border-bottom: 3px solid #ffffff;
+          margin: 10px auto;
+        "
+      />
+      <p class="copyright">
+        Copyright &copy; 2022 EcoClean. All Rights Reserved.
+      </p>
+    </footer>
+    <script>
+      const logoutBtn = document.getElementById('logout-btn');
+      const logoutPopup = document.getElementById('logout-popup')
+      logoutBtn.addEventListener('click', () => {
+        logoutPopup.style.display = 'block';
+      });
+      document.getElementById('logout-confirm').addEventListener('click', () => {
+        console.log('Logout confirmed');
+        logoutPopup.style.display = 'none';
+      });
+      document.getElementById('logout-cancel').addEventListener('click', () => {
+        logoutPopup.style.display = 'none';
+      });
+          </script>
+  </body>
+</html>

@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url(../images/bg1.png);
+  background-color: #f6ecac;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+header {
+  position: fixed;
+  width: 100%;
+  gap: 0 2rem;
+  background-color: #f6ecac;
+}
+.navbar {
+  width: 100%;
+  height: 110px;
+  max-width: fit-content;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.navbar .img {
+  margin-right: 1200px;
+  flex-shrink: 0;
+}
+.navbar .logout button {
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: #d7b72b;
+  color: #ffffff;
+  font-weight: 500;
+}
+.navbar .logout button:hover {
+  transform: scale(1.1);
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding-top: 140px;
+}
+.container2 {
+  background-color: #f6ecac;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 2000px;
+  align-items: center;
+  height: 600px;
+}
+.panel {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  position: fixed;
+}
+.leftpanel {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  background-color: #fcdd59;
+  box-sizing: border-box;
+  width: 20%;
+  padding-top: 30px;
+  float: left;
+  height: 575px;
+}
+.leftpanel ul li {
+  list-style: none;
+}
+.leftpanel ul li a,
+.leftpanel ul li a:visited {
+  text-decoration: none;
+  color: black;
+  padding: 16px 32px;
+  margin: 14px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-spacing: 10px;
+  border-radius: 4px;
+  background-color: #3f5faa;
+  color: white;
+  width: 75%;
+}
+.leftpanel ul li a:hover {
+  transform: scale(1.1);
+  background-color: #4361ee;
+}
+.rightpanel {
+  position: fixed;
+  display: flex;
+  background-color: #fcdd59;
+  box-sizing: border-box;
+  width: 62%;
+  padding: 20px;
+  float: right;
+  z-index: -1;
+  height: 575px;
+  margin-left: 315px;
+  justify-content: center;
+  background-image: url(../images/bg1.png);
+  flex-direction: column;
+}
+.allbox {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-left: 125px;
+}
+.box {
+  width: 100%;
+  background-color: #fcdd59;
+  padding: 10px;
+  margin: 5px;
+  margin-bottom: -10px;
+}
+.content {
+  background-color: #f6ecac;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  gap: 0 15rem;
+}
+.con {
+  display: flex;
+  flex-direction: column;
+}
+.item {
+  font-size: 20px;
+  padding-left: 25px;
+}
+.butons {
+  padding-top: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 0 1rem;
+}
+.in .but,
+.in .but:visited {
+  display: block;
+  width: 75%;
+  padding: 10px;
+  background-color: #3f5faa;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 700;
+  margin-left: 125px;
+  margin-bottom: 10px;
+}
+.in,
+.in:visited,
+.in:hover {
+  text-decoration: none;
+}
+.in .but:hover {
+  transform: scale(1.1);
+  background-color: #4980fe;
+}
+.ins .but,
+.ins .but:visited {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #d7b72b;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-weight: 700;
+}
+.ins,
+.ins:visited,
+.ins:hover {
+  text-decoration: none;
+}
+.ins .but:hover {
+  transform: scale(1.1);
+  background-color: #3f5faa;
+}
+.copyright {
+  font-size: small;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+#logout-popup {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f6ecac;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: none;
+  height: 140px;
+}
+#logout-popup p {
+  margin-bottom: 20px;
+}
+#logout-popup button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  cursor: pointer;
+}
+.logout_confirm {
+  margin-right: 70px;
+  margin-left: 30px;
+  font-weight: 700;
+  background-color: #d7b72b;
+}
+.logout_cancel {
+  background-color: #4361ee;
+  font-weight: 700;
+}
+.logout_confirm:hover {
+  background-color: #edcd2b;
+}
+.logout_cancel:hover {
+  background-color: #4980fe;
+}

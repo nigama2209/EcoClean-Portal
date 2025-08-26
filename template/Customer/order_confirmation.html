@@ -1,0 +1,236 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoClean - Customer</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background-image: url("{% static 'images/bg1.png' %}");
+        background-size: cover;
+        background-position: center;
+        background-repeat: repeat;
+        display: flex;
+        flex-direction: column;
+      }
+      .btn-outline-danger-custom {
+        border: 1px solid #dc3545 !important;
+        color: #dc3545 !important;
+        background-color: transparent;
+        transition: 0.3s;
+      }
+
+      .btn-outline-danger-custom:hover {
+        background-color: #dc3545 !important;
+        color: white !important;
+      }
+
+      body::before {
+        content: "";
+        background-color: rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+
+      .navbar {
+        background-color: rgba(255, 255, 255, 0) !important;
+        backdrop-filter: blur(10px);
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .navbar .logo img {
+        height: 60px;
+      }
+
+      .nav-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .offcanvas {
+        background-color: rgba(255, 255, 255, 0.4) !important;
+        backdrop-filter: blur(10px);
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .nav-actions a,
+      .nav-actions button {
+        color: #2c7a7b;
+        border: 1px solid #2c7a7b;
+        background-color: transparent;
+        padding: 6px 16px;
+        border-radius: 8px;
+        font-weight: 500;
+        text-decoration: none;
+      }
+
+      .rightpanel {
+        padding: 20px;
+        flex: 1;
+      }
+
+      .rightpanel .card {
+        background-color: rgba(255, 255, 255, 0) !important;
+        backdrop-filter: blur(10px);
+      }
+    
+
+      footer {
+        color: #003f5c;
+        text-align: center;
+        padding: 20px 0;
+        background-color: rgba(255, 255, 255, 0) !important;
+        backdrop-filter: blur(10px);
+        font-size: 0.95rem;
+        font-weight: 500;
+        margin-top: auto;
+      }
+
+      @media (min-width: 768px) {
+        .offcanvas-start {
+          width: 230px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Top Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <img
+          src="{% static 'images/EcoClean__2_-removebg-preview.png' %}"
+          alt="EcoClean Logo" />
+      </div>
+      <div class="nav-actions">
+        <!-- Burger Menu -->
+        <button
+          class="btn"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#sidebarMenu">
+          <i class="fas fa-bars"></i>
+        </button>
+        <!-- Home -->
+        <a href="/" class="btn">Home</a>
+        <!-- Logout -->
+        <a
+          href="#"
+          class="btn btn-outline-danger-custom text-white"
+          data-bs-toggle="modal"
+          data-bs-target="#logoutModal">
+          Logout <i class="fas fa-sign-out-alt"></i>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Sidebar Offcanvas -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMenu">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Menu</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="../../../customer/">Customer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../profile/{{user.username}}">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../servicelist/{{user.username}}"
+              >Services List</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../orderlist/{{user.username}}"
+              >Booking</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../cart/{{user.username}}">Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../history/{{user.username}}">History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../../feedback/{{user.username}}"
+              >Feedback Form</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="rightpanel container my-5">
+      <div class="container text-center my-5">
+        <div class="card shadow-lg p-5 mx-auto" style="max-width: 500px;">
+          <h2 class="text-success fw-bold">Order Placed Successfully!</h2>
+          <p>Thank you {{ username }}. Your booking has been confirmed.</p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="logoutModal"
+      tabindex="-1"
+      aria-labelledby="logoutModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="logoutModalLabel">Confirm Logout</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+          <div class="modal-body">Are you sure you want to logout?</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal">
+              No
+            </button>
+            <a href="../../customlogout" class="btn btn-danger">Yes, Logout</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2022 EcoClean. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS Bundle (with Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,269 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EcoClean: Innovative Laundry Solutions</title>
+    <link
+      rel="shortcut icon"
+      href="{% static 'images/EcoClean__2_-removebg-preview.png' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        line-height: 1.7;
+        background-image: url("{% static 'images/bg1.png' %}");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: center;
+        color: #1a202c;
+      }
+
+      .navbar {
+        background-color: rgba(255, 255, 255, 0.25) !important;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        z-index: 1000;
+      }
+      .dropdown-menu {
+        z-index: 1050;
+      }
+      .navbar-brand span {
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: #2c7a7b;
+      }
+
+      .nav-link {
+        margin-left: 1rem;
+        color: #1a202c !important;
+        font-weight: 500;
+      }
+
+      .nav-link:hover {
+        color: #2c7a7b !important;
+      }
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.9)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      }
+      h1,
+      h2 {
+        color: #2c7a7b;
+        font-weight: 700;
+      }
+
+      .container p {
+        font-size: 1.1rem;
+      }
+
+      .container > .row {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      .adminbody img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      @media (max-width: 768px) {
+        .textt {
+          text-align: center !important;
+        }
+      }
+
+      footer {
+        background-color: rgba(0, 0, 0, 0.2) !important;
+        backdrop-filter: blur(8px);
+        color: #ffffff;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      footer a {
+        color: #000000;
+        text-decoration: none;
+      }
+
+      footer a:hover {
+        color: #81e6d9;
+        text-decoration: underline;
+      }
+
+      .footer-icons a {
+        font-size: 1.4rem;
+        transition: 0.3s ease;
+        margin-right: 1rem;
+      }
+
+      .btn-success {
+        background-color: #2c7a7b;
+        border: none;
+      }
+
+      .btn-success:hover {
+        background-color: #276f6b;
+      }
+
+      .btn {
+        transition: transform 0.2s ease;
+      }
+
+      .btn:hover {
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg shadow">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img
+            src="{% static 'images/EcoClean__2_-removebg-preview.png' %}"
+            alt="EcoClean"
+            width="50" />
+          <span class="ms-2">EcoClean</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                data-bs-toggle="dropdown"
+                >About</a
+              >
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="abtad">Admin</a></li>
+                <li><a class="dropdown-item" href="abtcust">Customer</a></li>
+                <li><a class="dropdown-item" href="abtman">Manager</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="portfolio">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login"
+                ><i class="fa fa-user"></i> Login</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="signup"
+                ><i class="fa fa-sign-in"></i> SignUp</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container py-4 text-center">
+      <h1 class="fw-bold">Customer</h1>
+      <div class="adminbody">
+        <div class="row align-items-center">
+          <div class="col-md-6 mb-4 mb-md-0">
+            <div class="h-100 p-3 p-md-4 text-start text-md">
+              <p>
+                In an online laundry platform, customers can register and log in
+                to their accounts, where they are able to place orders for
+                laundry services, schedule laundry, track the status of their
+                orders, make secure payments, and submit feedback about the
+                services they received.Customers can also visit our store to
+                know more details of it.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="h-100 p-3 p-md-4">
+              <img
+                src="https://cdn.prod.website-files.com/64022de562115a8189fe542a/64675ffb08b23c489e1a744b_Customer-centricity-why-it-matters-to-your-business.jpg"
+                alt="Admin Illustration"
+                class="img-fluid rounded shadow-sm" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="text-dark py-4 mt-4">
+      <div class="container">
+        <div class="row text-center text-md-start">
+          <div class="col-md-4 mb-3">
+            <img
+              src="{% static 'images/EcoClean__2_-removebg-preview.png' %}"
+              alt="Logo"
+              width="60" />
+            <h4 class="mt-2">EcoClean</h4>
+            <p>Innovative Solutions for Sustainable Laundry Management</p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h5>Menu</h5>
+            <ul class="list-unstyled">
+              <li><a href="/" class="text-white">Home</a></li>
+              <li><a href="#" class="text-white">About</a></li>
+              <li><a href="services" class="text-white">Services</a></li>
+              <li><a href="portfolio" class="text-white">Portfolio</a></li>
+              <li><a href="contact" class="text-white">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 mb-3">
+            <h5>Subscribe</h5>
+            <form method="post" action="subscribe">
+              {% csrf_token %}
+              <div class="input-group">
+                <input
+                  type="email"
+                  name="sub"
+                  class="form-control"
+                  placeholder="Enter email" />
+                <button class="btn btn-success" type="submit">Subscribe</button>
+              </div>
+            </form>
+            <div
+              class="mt-3 d-flex justify-content-center justify-content-md-start gap-3 footer-icons">
+              <a href="login" class="text-white"><i class="fa fa-user"></i></a>
+              <a href="signup" class="text-white"
+                ><i class="fa fa-sign-in"></i
+              ></a>
+              <a href="#" class="text-white"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+            </div>
+          </div>
+        </div>
+        <hr class="bg-white" />
+        <p class="text-center mb-0">
+          &copy; 2022 EcoClean. All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  </body>
+</html>
