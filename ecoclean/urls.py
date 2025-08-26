@@ -20,7 +20,6 @@ from django.urls import path,include # type: ignore
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("",include('common.urls')),
-    path("manager/",include('manager.urls')),
     path("customer/",include('customer.urls')),
 ]
 admin.site.site_header="Nigama"
